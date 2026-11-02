@@ -1,0 +1,62 @@
+.avatar-scene {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-glow {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d7c5ff80, #9ab9ff22 65%, transparent 72%);
+}
+
+.avatar-character {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 15px #17103c30);
+}
+
+.avatar-sparkle {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  font-size: 24px;
+  animation: avatar-float 3s ease-in-out infinite;
+}
+
+.sparkle-one {
+  top: 28px;
+  left: 12px;
+}
+
+.sparkle-two {
+  top: 65px;
+  right: 4px;
+  animation-delay: 1s;
+}
+
+@keyframes avatar-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 650px) {
+  .avatar-scene {
+    width: 130px;
+    height: 130px;
+  }
+
+  .avatar-glow {
+    width: 120px;
+    height: 120px;
+  }
+}
